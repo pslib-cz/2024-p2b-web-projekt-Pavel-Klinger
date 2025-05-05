@@ -1,2 +1,3 @@
 Github Pages : https://pslib-cz.github.io/2024-p2b-web-projekt-Pavel-Klinger/
-Figma : https://www.figma.com/design/ZIhzCRq27GUM9TMKDU3xel/Untitled?node-id=1-2&t=vizz5rMuHOc4XhkE-1
+Figma : https://www.figma.com/design/cjLcXRWvFX5k8DJARsWDTk/KlingerPavel?node-id=0-1&p=f&t=YL5AQESTNXizZ0T6-0
+Chci udělat webovku fiktivní restaurace
