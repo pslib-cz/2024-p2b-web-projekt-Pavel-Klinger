@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="/src/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KONTAKT | Restaurace Mellow</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="../index.html"><img src="../../public/images/home.png" alt="Domů"></a>
+      <a href="../menu.html"><img src="../../public/images/restaurant.png" alt="Menu"></a>
+      <a href="../about.html"><img src="../../public/images/info.png" alt="O nás"></a>
+      <a href="index.html"><img src="../../public/images/envelope.png" alt="Kontakt"></a>
+    </nav>
+  </header>
+  <main>
+    <h1>KONTAKT</h1>
+    <form id="kontakt-form">
+      <input type="email" name="email" placeholder="Váš e-mail" required>
+      <textarea name="zprava" placeholder="Napište zprávu..." required></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+    <div id="kontakt-vystup"></div>
+    <div id="kos-animace"></div>
+  </main>
+  <footer>
+    &copy; 2025 Restaurace Mellow
+  </footer>
+  <script type="module" src="/src/scripts/main.js"></script>
+  <script>
+    document.getElementById('kontakt-form').onsubmit = function(e) {
+      e.preventDefault();
+      const email = this.email.value;
+      const zprava = this.zprava.value;
+      document.getElementById('kontakt-vystup').innerHTML = `<b>${email}:</b> ${zprava}`;
+      document.getElementById('kos-animace').innerHTML = '<div class="kos"></div>';
+      setTimeout(() => {
+        document.getElementById('kontakt-vystup').innerHTML = '';
+        document.getElementById('kos-animace').innerHTML = '';
+      }, 2000);
+      this.reset();
+    }
+  </script>
+</body>
+</html>

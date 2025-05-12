@@ -1,0 +1,25 @@
+{
+  "name": "restaurace-mellow",
+  "version": "1.0.0",
+  "description": "A website for Restaurace Mellow, showcasing the menu, about information, and contact details.",
+  "main": "src/scripts/main.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined yet.'"
+  },
+  "keywords": [
+    "restaurant",
+    "mellow",
+    "menu",
+    "about",
+    "contact"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "swiper": "^10.0.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

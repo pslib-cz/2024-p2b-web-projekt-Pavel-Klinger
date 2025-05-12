@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="stylesheet" href="/src/styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurace Mellow</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="index.html"><img src="../public/images/home.png" alt="Domů"></a>
+      <a href="menu.html"><img src="../public/images/restaurant.png" alt="Menu"></a>
+      <a href="about.html"><img src="../public/images/info.png" alt="O nás"></a>
+      <a href="./contacts/index.html"><img src="../public/images/envelope.png" alt="Kontakt"></a>
+    </nav>
+  </header>
+  <main>
+    <h1>Restaurace Mellow</h1>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../public/images/restaurace1.jpg" alt="Restaurace interiér 1"></div>
+        <div class="swiper-slide"><img src="../public/images/restaurace2.jpg" alt="Restaurace interiér 2"></div>
+        <div class="swiper-slide"><img src="../public/images/restaurace3.jpg" alt="Restaurace interiér 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
+    </div>
+    <a class="menu-btn" href="menu.html">Prozkoumat MENU</a>
+    <section class="recenze">
+      <h2>Recenze</h2>
+      <form id="recenze-form">
+        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+        <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
+        <button type="submit">Odeslat</button>
+      </form>
+      <div id="recenze-vystup"></div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Restaurace Mellow
+  </footer>
+  <script type="module" src="/src/scripts/swiper.js"></script>
+  <script type="module" src="/src/scripts/main.js"></script>
+  <script>
+    document.getElementById('recenze-form').onsubmit = function(e) {
+      e.preventDefault();
+      const jmeno = this.jmeno.value;
+      const recenze = this.recenze.value;
+      document.getElementById('recenze-vystup').innerHTML = `<b>${jmeno}:</b> ${recenze}`;
+      this.reset();
+    }
+  </script>
+</body>
+</html>
