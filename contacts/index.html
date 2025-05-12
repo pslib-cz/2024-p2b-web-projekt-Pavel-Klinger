@@ -1,21 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/2024-p2b-web-projekt-Pavel-Klinger/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts | Example Page</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/2024-p2b-web-projekt-Pavel-Klinger/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KONTAKT | Restaurace Mellow</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
   <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/hamburger-DzGNCfwF.js"></script>
   <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/main-Bgzv3cQd.js"></script>
-  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-B-9vUFGV.css">
+  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-CMsOnSW7.css">
 </head>
 <body>
-    <div class="app">
-        <h1>Contacts</h1>
-        <p>This is the contacts page.</p>
-        <p><a href="../">homepage link</a></p>
-        <p><a href="/2024-p2b-web-projekt-Pavel-Klinger/">homepage link <img src="/2024-p2b-web-projekt-Pavel-Klinger/vite.svg"></a></p>
-    </div>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="../index.html"><img src="../../public/images/home.png" alt="Domů"></a>
+      <a href="../menu.html"><img src="../../public/images/restaurant.png" alt="Menu"></a>
+      <a href="../about.html"><img src="../../public/images/info.png" alt="O nás"></a>
+      <a href="index.html"><img src="../../public/images/envelope.png" alt="Kontakt"></a>
+    </nav>
+  </header>
+  <main>
+    <h1>KONTAKT</h1>
+    <form id="kontakt-form">
+      <input type="email" name="email" placeholder="Váš e-mail" required>
+      <textarea name="zprava" placeholder="Napište zprávu..." required></textarea>
+      <button type="submit">Odeslat</button>
+    </form>
+    <div id="kontakt-vystup"></div>
+    <div id="kos-animace"></div>
+  </main>
+  <footer>
+    &copy; 2025 Restaurace Mellow
+  </footer>
+  <script>
+    document.getElementById('kontakt-form').onsubmit = function(e) {
+      e.preventDefault();
+      const email = this.email.value;
+      const zprava = this.zprava.value;
+      document.getElementById('kontakt-vystup').innerHTML = `<b>${email}:</b> ${zprava}`;
+      document.getElementById('kos-animace').innerHTML = '<div class="kos"></div>';
+      setTimeout(() => {
+        document.getElementById('kontakt-vystup').innerHTML = '';
+        document.getElementById('kos-animace').innerHTML = '';
+      }, 2000);
+      this.reset();
+    }
+  </script>
 </body>
 </html>
