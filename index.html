@@ -1,22 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/2024-p2b-web-projekt-Pavel-Klinger/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Example page</title>
-    <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-    <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/hamburger-DzGNCfwF.js"></script>
-    <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/main-Bgzv3cQd.js"></script>
-    <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-B-9vUFGV.css">
-  </head>
-  <body>
-    <div class="app">
-      <h1>Hello Example page</h1>
-      <p><a href="./contacts/">Link to Contact page</a></p>
-      <p><a href="/2024-p2b-web-projekt-Pavel-Klinger/contacts/">ihkuhubz ujghuvbgjvjug uzbujgLink to Contact page</a></p>
-      <p><a href="/2024-p2b-web-projekt-Pavel-Klinger/swiper/">Link to Swiper example</a></p>
-      <p><a href="/2024-p2b-web-projekt-Pavel-Klinger/gallery.html">Link to Gallery example</a></p>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/2024-p2b-web-projekt-Pavel-Klinger/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurace Mellow</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/swiper-DcjeJ9ci.js"></script>
+  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/hamburger-DzGNCfwF.js"></script>
+  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/main-Bgzv3cQd.js"></script>
+  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/swiper-OSsuDtBi.css">
+  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-CMsOnSW7.css">
+</head>
+<body>
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="/2024-p2b-web-projekt-Pavel-Klinger/"><img src="../public/images/home.png" alt="Domů"></a>
+      <a href="/2024-p2b-web-projekt-Pavel-Klinger/menu/"><img src="../public/images/restaurant.png" alt="Menu"></a>
+      <a href="/2024-p2b-web-projekt-Pavel-Klinger/about/"><img src="../public/images/info.png" alt="O nás"></a>
+      <a href="/2024-p2b-web-projekt-Pavel-Klinger/contacts/"><img src="../public/images/envelope.png" alt="Kontakt"></a>
+    </nav>
+  </header>
+  <main>
+    <h1>Restaurace Mellow</h1>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../public/images/restaurace1.jpg" alt="Restaurace interiér 1"></div>
+        <div class="swiper-slide"><img src="../public/images/restaurace2.jpg" alt="Restaurace interiér 2"></div>
+        <div class="swiper-slide"><img src="../public/images/restaurace3.jpg" alt="Restaurace interiér 3"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-scrollbar"></div>
     </div>
-  </body>
+    <a class="menu-btn" href="/2024-p2b-web-projekt-Pavel-Klinger/menu/">Prozkoumat MENU</a>
+    <section class="recenze">
+      <h2>Recenze</h2>
+      <form id="recenze-form">
+        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+        <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
+        <button type="submit">Odeslat</button>
+      </form>
+      <div id="recenze-vystup"></div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Restaurace Mellow
+  </footer>
+  <script>
+    document.getElementById('recenze-form').onsubmit = function(e) {
+      e.preventDefault();
+      const jmeno = this.jmeno.value;
+      const recenze = this.recenze.value;
+      document.getElementById('recenze-vystup').innerHTML = `<b>${jmeno}:</b> ${recenze}`;
+      this.reset();
+    }
+  </script>
+</body>
 </html>
