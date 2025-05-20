@@ -6,12 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurace Mellow</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
-  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/swiper-DcjeJ9ci.js"></script>
-  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/hamburger-DzGNCfwF.js"></script>
-  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/main-Bgzv3cQd.js"></script>
+  <script type="module" crossorigin src="/2024-p2b-web-projekt-Pavel-Klinger/assets/index-BAc8EUMz.js"></script>
+  <link rel="modulepreload" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/swiper-DcjeJ9ci.js">
   <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/swiper-OSsuDtBi.css">
-  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-CM5LBVba.css">
+  <link rel="stylesheet" crossorigin href="/2024-p2b-web-projekt-Pavel-Klinger/assets/style-8Qis2ADI.css">
 </head>
 <body>
   <header class="main-header">
@@ -36,37 +34,61 @@
   </header>
   <main>
     <h1>Restaurace Mellow</h1>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace1.JPG" alt="Restaurace interiér 1"></div>
-        <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace2.JPG" alt="Restaurace interiér 2"></div>
-        <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace3.JPG" alt="Restaurace interiér 3"></div>
+    
+    <div class="home-layout">
+      <!-- Levá část s fotem, tlačítkem a formulářem -->
+      <div class="home-left">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace1.JPG" alt="Restaurace interiér 1"></div>
+            <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace2.JPG" alt="Restaurace interiér 2"></div>
+            <div class="swiper-slide"><img src="/2024-p2b-web-projekt-Pavel-Klinger/images/restaurace3.JPG" alt="Restaurace interiér 3"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <a class="menu-btn" href="/2024-p2b-web-projekt-Pavel-Klinger/menu/">Prozkoumat MENU</a>
+        
+        <!-- Formulář recenze pod tlačítkem -->
+        <form id="recenze-form">
+          <h3>Napište nám recenzi</h3>
+          <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+          <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
+          <button type="submit">Odeslat</button>
+        </form>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-scrollbar"></div>
+      
+      <!-- Pravá část s recenzemi -->
+      <div class="home-right">
+        <section class="recenze">
+          <h2>Recenze:</h2>
+          <div class="recenze-box">
+            <div class="recenze-item">
+              <b>Jana Novotná</b>
+              Skvělá restaurace s příjemnou atmosférou. Jídlo bylo vynikající a obsluha velmi milá. Především doporučuji jejich halloumi bowl, který chutná fantasticky!
+            </div>
+            <div class="recenze-item">
+              <b>Petr Svoboda</b>
+              Navštívili jsme restauraci Mellow minulý víkend a byli jsme nadšeni. Interiér je útulný, personál ochotný a jídlo chutné. Určitě se vrátíme!
+            </div>
+            <div id="recenze-nova" class="recenze-item"></div>
+          </div>
+        </section>
+      </div>
     </div>
-    <a class="menu-btn" href="/2024-p2b-web-projekt-Pavel-Klinger/menu/">Prozkoumat MENU</a>
-    <section class="recenze">
-      <h2>Recenze</h2>
-      <form id="recenze-form">
-        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
-        <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
-        <button type="submit">Odeslat</button>
-      </form>
-      <div id="recenze-vystup"></div>
-    </section>
   </main>
   <footer>
     &copy; 2025 Restaurace Mellow
   </footer>
+  
   <script>
     document.getElementById('recenze-form').onsubmit = function(e) {
       e.preventDefault();
       const jmeno = this.jmeno.value;
       const recenze = this.recenze.value;
-      document.getElementById('recenze-vystup').innerHTML = `<b>${jmeno}:</b> ${recenze}`;
+      document.getElementById('recenze-nova').innerHTML = `<b>${jmeno}</b>${recenze}`;
       this.reset();
     }
   </script>
