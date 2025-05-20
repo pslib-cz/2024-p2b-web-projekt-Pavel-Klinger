@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" href="/Mellow.svg" />
   <link rel="stylesheet" href="/src/styles/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurace Mellow</title>
@@ -11,47 +11,82 @@
 <body>
   <header class="main-header">
     <nav class="main-nav">
-      <a href="%BASE_URL%"><img src="../public/images/home.png" alt="Domů"></a>
-      <a href="%BASE_URL%menu/"><img src="../public/images/restaurant.png" alt="Menu"></a>
-      <a href="%BASE_URL%about/"><img src="../public/images/info.png" alt="O nás"></a>
-      <a href="%BASE_URL%contacts/"><img src="../public/images/envelope.png" alt="Kontakt"></a>
+      <a href="%BASE_URL%" class="active">
+        <img src="%BASE_URL%images/home.png" alt="Domů">
+        <span>Home</span>
+      </a>
+      <a href="%BASE_URL%menu/">
+        <img src="%BASE_URL%images/restaurant.png" alt="Menu">
+        <span>Menu</span>
+      </a>
+      <a href="%BASE_URL%about/">
+        <img src="%BASE_URL%images/info.png" alt="O nás">
+        <span>Info</span>
+      </a>
+      <a href="%BASE_URL%contacts/">
+        <img src="%BASE_URL%images/envelope.png" alt="Kontakt">
+        <span>Contact</span>
+      </a>
     </nav>
   </header>
   <main>
     <h1>Restaurace Mellow</h1>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="../public/images/restaurace1.jpg" alt="Restaurace interiér 1"></div>
-        <div class="swiper-slide"><img src="../public/images/restaurace2.jpg" alt="Restaurace interiér 2"></div>
-        <div class="swiper-slide"><img src="../public/images/restaurace3.jpg" alt="Restaurace interiér 3"></div>
+    
+    <div class="home-layout">
+      <!-- Levá část s fotem, tlačítkem a formulářem -->
+      <div class="home-left">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="%BASE_URL%images/restaurace1.JPG" alt="Restaurace interiér 1"></div>
+            <div class="swiper-slide"><img src="%BASE_URL%images/restaurace2.JPG" alt="Restaurace interiér 2"></div>
+            <div class="swiper-slide"><img src="%BASE_URL%images/restaurace3.JPG" alt="Restaurace interiér 3"></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+        <a class="menu-btn" href="%BASE_URL%menu/">Prozkoumat MENU</a>
+        
+        <!-- Formulář recenze pod tlačítkem -->
+        <form id="recenze-form">
+          <h3>Napište nám recenzi</h3>
+          <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+          <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
+          <button type="submit">Odeslat</button>
+        </form>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-scrollbar"></div>
+      
+      <!-- Pravá část s recenzemi -->
+      <div class="home-right">
+        <section class="recenze">
+          <h2>Recenze:</h2>
+          <div class="recenze-box">
+            <div class="recenze-item">
+              <b>Jana Novotná</b>
+              Skvělá restaurace s příjemnou atmosférou. Jídlo bylo vynikající a obsluha velmi milá. Především doporučuji jejich halloumi bowl, který chutná fantasticky!
+            </div>
+            <div class="recenze-item">
+              <b>Petr Svoboda</b>
+              Navštívili jsme restauraci Mellow minulý víkend a byli jsme nadšeni. Interiér je útulný, personál ochotný a jídlo chutné. Určitě se vrátíme!
+            </div>
+            <div id="recenze-nova" class="recenze-item"></div>
+          </div>
+        </section>
+      </div>
     </div>
-    <a class="menu-btn" href="%BASE_URL%menu/">Prozkoumat MENU</a>
-    <section class="recenze">
-      <h2>Recenze</h2>
-      <form id="recenze-form">
-        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
-        <textarea name="recenze" placeholder="Napište recenzi..." required></textarea>
-        <button type="submit">Odeslat</button>
-      </form>
-      <div id="recenze-vystup"></div>
-    </section>
   </main>
   <footer>
     &copy; 2025 Restaurace Mellow
   </footer>
+  
   <script type="module" src="/src/scripts/swiper.js"></script>
-  <script type="module" src="/src/scripts/main.js"></script>
   <script>
     document.getElementById('recenze-form').onsubmit = function(e) {
       e.preventDefault();
       const jmeno = this.jmeno.value;
       const recenze = this.recenze.value;
-      document.getElementById('recenze-vystup').innerHTML = `<b>${jmeno}:</b> ${recenze}`;
+      document.getElementById('recenze-nova').innerHTML = `<b>${jmeno}</b>${recenze}`;
       this.reset();
     }
   </script>

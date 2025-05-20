@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" href="/Mellow.svg" />
   <link rel="stylesheet" href="/src/styles/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KONTAKT | Restaurace Mellow</title>
@@ -11,10 +11,22 @@
 <body>
   <header class="main-header">
     <nav class="main-nav">
-      <a href="%BASE_URL%"><img src="../public/images/home.png" alt="Domů"></a>
-      <a href="%BASE_URL%menu/"><img src="../public/images/restaurant.png" alt="Menu"></a>
-      <a href="%BASE_URL%about/"><img src="../public/images/info.png" alt="O nás"></a>
-      <a href="%BASE_URL%contacts/"><img src="../public/images/envelope.png" alt="Kontakt"></a>
+      <a href="%BASE_URL%">
+        <img src="%BASE_URL%images/home.png" alt="Domů">
+        <span>Home</span>
+      </a>
+      <a href="%BASE_URL%menu/">
+        <img src="%BASE_URL%images/restaurant.png" alt="Menu">
+        <span>Menu</span>
+      </a>
+      <a href="%BASE_URL%about/">
+        <img src="%BASE_URL%images/info.png" alt="O nás">
+        <span>Info</span>
+      </a>
+      <a href="%BASE_URL%contacts/" class="active">
+        <img src="%BASE_URL%images/envelope.png" alt="Kontakt">
+        <span>Contact</span>
+      </a>
     </nav>
   </header>
   <main>
@@ -30,7 +42,6 @@
   <footer>
     &copy; 2025 Restaurace Mellow
   </footer>
-  <script type="module" src="/src/scripts/main.js"></script>
   <script>
     document.getElementById('kontakt-form').onsubmit = function(e) {
       e.preventDefault();

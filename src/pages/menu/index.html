@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" href="/Mellow.svg" />
   <link rel="stylesheet" href="/src/styles/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MENU | Restaurace Mellow</title>
@@ -11,25 +11,37 @@
 <body>
   <header class="main-header">
     <nav class="main-nav">
-      <a href="%BASE_URL%"><img src="../public/images/home.png" alt="Domů"></a>
-      <a href="%BASE_URL%menu/"><img src="../public/images/restaurant.png" alt="Menu"></a>
-      <a href="%BASE_URL%about/"><img src="../public/images/info.png" alt="O nás"></a>
-      <a href="%BASE_URL%contacts/"><img src="../public/images/envelope.png" alt="Kontakt"></a>
+      <a href="%BASE_URL%">
+        <img src="%BASE_URL%images/home.png" alt="Domů">
+        <span>Home</span>
+      </a>
+      <a href="%BASE_URL%menu/" class="active">
+        <img src="%BASE_URL%images/restaurant.png" alt="Menu">
+        <span>Menu</span>
+      </a>
+      <a href="%BASE_URL%about/">
+        <img src="%BASE_URL%images/info.png" alt="O nás">
+        <span>Info</span>
+      </a>
+      <a href="%BASE_URL%contacts/">
+        <img src="%BASE_URL%images/envelope.png" alt="Kontakt">
+        <span>Contact</span>
+      </a>
     </nav>
   </header>
   <main>
     <h1>MENU</h1>
     <div class="gallery1">
       <figure class="picture info">
-        <img class="picture__image" src="../public/images/salat.jpg" alt="Grilovaný halloumi bowl">
+        <img class="picture__image" src="%BASE_URL%images/salat.JPG" alt="Grilovaný halloumi bowl">
         <figcaption>Grilovaný halloumi bowl<br><small>Čerstvý salát, batáty, hummus a grilovaný halloumi s limetkovým dresinkem</small></figcaption>
       </figure>
       <figure class="picture info">
-        <img class="picture__image" src="../public/images/spagheti.jpg" alt="Krémové tagliatelle s houbami">
+        <img class="picture__image" src="%BASE_URL%images/spagheti.JPG" alt="Krémové tagliatelle s houbami">
         <figcaption>Krémové tagliatelle s houbami<br><small>Domácí těstoviny v krémové omáčce s houbami a parmazánem.</small></figcaption>
       </figure>
       <figure class="picture info">
-        <img class="picture__image" src="../public/images/cake.jpg" alt="Mellow dortík s malinami">
+        <img class="picture__image" src="%BASE_URL%images/cake.JPG" alt="Mellow dortík s malinami">
         <figcaption>Mellow dortík s malinami<br><small>Vanilkový dort s malinovým pyré a lesním ovocem</small></figcaption>
       </figure>
     </div>
@@ -37,6 +49,5 @@
   <footer>
     &copy; 2025 Restaurace Mellow
   </footer>
-  <script type="module" src="/src/scripts/main.js"></script>
 </body>
 </html>
